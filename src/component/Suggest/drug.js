@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "./Image";
-import img from "../../assets/man.png";
+import img from "../../assets/drug.png";
 
 const Container = styled.div`
   width: 100vw;
