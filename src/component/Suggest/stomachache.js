@@ -21,7 +21,7 @@ const Text = styled.div`
   margin-left: 5rem;
   p {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     justify-content: flex-start;
