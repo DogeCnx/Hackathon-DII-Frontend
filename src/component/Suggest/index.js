@@ -10,6 +10,7 @@ const Container =styled.div`
  justify-content:center;
  align-items:center;
  flex-direction:column;
+ background-color: #009900;
 `
 const Text =styled.div`
  width:45vw;

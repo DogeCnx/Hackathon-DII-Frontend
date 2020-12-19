@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import withHelmet from "../util/withHelmet";
-import Suggest from "../component/Suggest/drug";
+import Suggest from "../component/Suggest/stomachache";
 
 
 const Container = styled.div`
@@ -10,8 +10,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #009900;
-  color: #ffffff;
+  /* background-color: #009900;
+  color: #ffffff; */
 `;
 
 function Dispense() {
