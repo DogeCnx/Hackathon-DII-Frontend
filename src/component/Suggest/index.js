@@ -1,10 +1,10 @@
 import React from 'react'
 
-function suggest (){
+function Suggest (){
     return (
         <>
         </>
     )
 }
 
-export default suggest
+export default Suggest
