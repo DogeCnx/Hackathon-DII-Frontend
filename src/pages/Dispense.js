@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import withHelmet from "../util/withHelmet";
-import Suggest from "../component/Suggest/index";
+import Suggest from "../component/Suggest/drug";
 
 
 const Container = styled.div`
