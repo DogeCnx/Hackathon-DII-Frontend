@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from './Image'
-import img from '../../assets/credit-cards.png' 
-
+import img from '../../assets/credit-cards.png'
+import BarcodeReader from 'react-barcode-reader' 
+import ActionContext from '../../contexts/ActionContext'
 const Container =styled.div`
  width:100vw;
  height:100vh;
@@ -26,9 +27,20 @@ const Box =styled.div`
 `
 
 function Scan (){
+    const { handleFunc,StateAA } = React.useContext(ActionContext)
+    const [handleNext,handleReset] = handleFunc
+    const [stateA, setStateA ] = StateAA
+    const handleScan = (data) => {
+        setStateA({
+          result: data
+        })
+        handleNext()
+    } 
     return(
         <Container>
           <Box>
+          <BarcodeReader
+          onScan={handleScan}/>
               <Image src={img} />
               <p>กรุณาสแกนบัตรประชน</p>
           </Box>

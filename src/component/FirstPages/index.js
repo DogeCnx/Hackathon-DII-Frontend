@@ -6,11 +6,14 @@ import img2 from '../../assets/hospital.png'
 import ActionContext from '../../contexts/ActionContext'
 import HowToUse2 from '../HowToUse2/index'
 import Symptom from '../Symptom/index'
-
+import Pill from '../typePill/index'
 import Diarrhea from '../Suggest/diarrhea'
 import Drung from '../Suggest/drug'
 import IndexSuggest from '../Suggest/index'
 import Stomachache from '../Suggest/stomachache'
+import List from '../List/index'
+import Scan from '../Scan/index'
+import QRCode from "react-qr-code";
 
 
 const Container =styled.div`
@@ -49,7 +52,7 @@ const Box=styled.div`
      border-radius:5%;
  }
 `
-function ActionPage(state,symptom){
+function ActionPage(state,symptom,pillData){
     switch (state) {
         case 0:
           return null;
@@ -71,11 +74,11 @@ function ActionPage(state,symptom){
                 return <IndexSuggest/>
             }
         case 4:
-            return 4;
+            return <Pill />;
         case 5:
-            return 4;
+            return <List />;
         case 6:
-            return 4;
+            return <QRCode value={Math.random()} />;
         case 7:
             return 4;
         default:
@@ -87,9 +90,11 @@ function ActionAspirint(state){
         case 0:
           return null;
         case 1:
-          return -2;
+          return <Scan/>;
         case 2:
-          return -3;
+          return <List />;
+        case 3:
+            return <QRCode value={Math.random()} />;
         default:
           return 'Unknown';
       }
@@ -104,11 +109,12 @@ function FirtsPage (){
         setCondi(condi-1)
         handleNext()
     }
-    const { stepPage, condiPage, handleFunc,symptoms } = React.useContext(ActionContext)
+    const { stepPage, condiPage, handleFunc,symptoms,pills } = React.useContext(ActionContext)
     const [handleNext,handleBack1,handleBack2,handleReset] = handleFunc
     const [condi, setCondi] = condiPage
     const [step, setStep] = stepPage 
     const [symptom , setSymptom] = symptoms
+    const [pillData, setPill] = pills
     return (
         <Container>
             {condi == 0 ? 
@@ -124,11 +130,11 @@ function FirtsPage (){
                 </Box>
             </WrapperBox>
             :null}
-            {condi >= 0  ? ActionPage(step,symptom) : ActionAspirint(step)}
+            {condi >= 0  ? ActionPage(step,symptom,pillData) : ActionAspirint(step)}
             {step >= 0 && step <= 6 && condi == 1 ? <button onClick={handleNext}>Next</button> : null }
-            {step >= 1 && step <= 7 && condi == 1 ? <button onClick={handleBack1}>handleBack</button> : null } 
-            {step >= 0 && step <= 6 && condi == -1 ? <button onClick={handleNext}>Next</button> : null }
-            {step >= 1 && step <= 7 && condi == -1 ? <button onClick={handleBack2}>handleBack</button> : null }           
+            {step >= 1 && step <= 7 && condi == 1 ? <button onClick={handleBack1}>handleBack</button> : null }  
+            {condi == -1 ? <button onClick={handleReset}>Reset</button>: null}      
+            {condi == -1 && step == 2? <button onClick={handleNext}>Next</button>: null}  
         </Container>
     )
 }

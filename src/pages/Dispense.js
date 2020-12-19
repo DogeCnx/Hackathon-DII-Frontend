@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import withHelmet from "../util/withHelmet";
 import Suggest from "../component/Suggest/drug";
+import Scan from '../component/Scan/index'
 
 
 const Container = styled.div`
@@ -17,7 +18,7 @@ const Container = styled.div`
 function Dispense() {
   return (
     <Container>
-      <Suggest />
+      <Scan />
     </Container>
   );
 }
