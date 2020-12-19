@@ -14,6 +14,7 @@ const ContainerToUse = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Prompt", sans-serif;
+  background-color: #009900;
 `;
 const TextContainer = styled.h1`
   font-size: 2.5rem;
