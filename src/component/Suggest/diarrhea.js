@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "./Image";
-import img from "../../assets/man.png";
+import img from "../../assets/diarrhea.png";
 
 const Container = styled.div`
   width: 100vw;
@@ -21,7 +21,7 @@ const Text = styled.div`
   margin-left: 5rem;
   p {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     justify-content: flex-start;
