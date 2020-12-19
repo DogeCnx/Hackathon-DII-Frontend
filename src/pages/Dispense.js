@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import TypePill from "../component/typePill";
 import withHelmet from "../util/withHelmet";
+import Suggest from "../component/Suggest/drug";
+
 
 const Container = styled.div`
   width: 100vw;
@@ -13,12 +14,12 @@ const Container = styled.div`
   color: #ffffff;
 `;
 
-function Pill() {
+function Dispense() {
   return (
     <Container>
-      <TypePill />
+      <Suggest />
     </Container>
   );
 }
 
-export default withHelmet("TypePill")(Pill);
+export default withHelmet("Dispense")(Dispense);
