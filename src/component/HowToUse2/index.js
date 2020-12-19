@@ -13,6 +13,7 @@ const ContainerToUse = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Prompt", sans-serif;
 `;
 const TextContainer = styled.h1`
   font-size: 2.5rem;
