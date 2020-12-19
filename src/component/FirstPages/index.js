@@ -7,6 +7,11 @@ import ActionContext from '../../contexts/ActionContext'
 import HowToUse2 from '../HowToUse2/index'
 import Symptom from '../Symptom/index'
 
+import Diarrhea from '../Suggest/diarrhea'
+import Drung from '../Suggest/drug'
+import IndexSuggest from '../Suggest/index'
+import Stomachache from '../Suggest/stomachache'
+
 
 const Container =styled.div`
  width:100vw;
@@ -44,7 +49,7 @@ const Box=styled.div`
      border-radius:5%;
  }
 `
-function ActionPage(state){
+function ActionPage(state,symptom){
     switch (state) {
         case 0:
           return null;
@@ -53,7 +58,18 @@ function ActionPage(state){
         case 2:
           return <Symptom/>;
         case 3:
-            return 4;
+            if(symptom.Diarrhea){
+                return <Diarrhea/>
+            }
+            else if(symptom.Stomach){
+                return <Stomachache/>
+            }
+            else if(symptom.Cough){
+                return <Drung/>
+            }
+            else {
+                return <IndexSuggest/>
+            }
         case 4:
             return 4;
         case 5:
@@ -88,12 +104,11 @@ function FirtsPage (){
         setCondi(condi-1)
         handleNext()
     }
-    const { stepPage, condiPage, handleFunc } = React.useContext(ActionContext)
+    const { stepPage, condiPage, handleFunc,symptoms } = React.useContext(ActionContext)
     const [handleNext,handleBack1,handleBack2,handleReset] = handleFunc
     const [condi, setCondi] = condiPage
     const [step, setStep] = stepPage 
-    console.log('step'+step)
-    console.log('condi'+condi)
+    const [symptom , setSymptom] = symptoms
     return (
         <Container>
             {condi == 0 ? 
@@ -109,7 +124,7 @@ function FirtsPage (){
                 </Box>
             </WrapperBox>
             :null}
-            {condi >= 0  ? ActionPage(step) : ActionAspirint(step)}
+            {condi >= 0  ? ActionPage(step,symptom) : ActionAspirint(step)}
             {step >= 0 && step <= 6 && condi == 1 ? <button onClick={handleNext}>Next</button> : null }
             {step >= 1 && step <= 7 && condi == 1 ? <button onClick={handleBack1}>handleBack</button> : null } 
             {step >= 0 && step <= 6 && condi == -1 ? <button onClick={handleNext}>Next</button> : null }

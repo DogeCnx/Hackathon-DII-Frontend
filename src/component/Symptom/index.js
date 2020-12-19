@@ -9,7 +9,7 @@ import img5 from '../../assets/fatigue.png'
 import img6 from '../../assets/diarrhea.png' 
 import img7 from '../../assets/diarrhea1.png' 
 import img8 from '../../assets/headache.png' 
-
+import ActionContext from '../../contexts/ActionContext'
 
 const Container =styled.div`
  width:100vw;
@@ -62,55 +62,114 @@ const BoxM =styled.div`
 `
 
 function Symptom (){
-    const [state, setState] = React.useState('white')
-    const [state2, setState2] = React.useState('white')
-    const [state3, setState3] = React.useState('white')
-    const [state4, setState4] = React.useState('white')
-    const [state5, setState5] = React.useState('white')
-    const [state6, setState6] = React.useState('white')
-    const [state7, setState7] = React.useState('white')
-    const [state8, setState8] = React.useState('white')
-   
-    const [ stateButton, setStateButton] = React.useState('black')
-    const [ stateButton2, setStateButton2] = React.useState('black')
-    const [ stateButton3, setStateButton3] = React.useState('black')
-    const [ stateButton4, setStateButton4] = React.useState('black')
-    const [ stateButton5, setStateButton5] = React.useState('black')
-    const [ stateButton6, setStateButton6] = React.useState('black')
-    const [ stateButton7, setStateButton7] = React.useState('black')
-    const [ stateButton8, setStateButton8] = React.useState('black')
+    const {symptoms, StateCh } = React.useContext(ActionContext)
+    const [symptom , setSymptom] = symptoms
+    const [state, setState,state2, setState2,state3, setState3,state4, setState4,state5, setState5,state6, setState6,state7, setState7,state8, setState8,
+        stateButton, setStateButton, stateButton2, setStateButton2, stateButton3, setStateButton3,stateButton4, setStateButton4, stateButton5, setStateButton5,
+        stateButton6, setStateButton6,stateButton7, setStateButton7,stateButton8, setStateButton8] = StateCh 
     
     const handleClick = () => {
-        setState((state) => setState(state === 'white' ? '#009900': 'white'))
-        setStateButton((stateButton => setStateButton(stateButton === 'black' ? 'white' : 'black')))
+        if(!symptom.fever){
+            setState(() => setState('#009900'))
+            setStateButton(() => setStateButton('Black'))
+            setSymptom({...symptom,fever:'have'})
+        }
+        else{
+            setState((state) => setState(state === 'white' ? '#009900': 'white'))
+            setStateButton((stateButton => setStateButton(stateButton === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,fever:undefined})
+        }
+        console.log(symptom.fever)
     }
-    const handleClick2 = () => {
-        setState2((state2) => setState2(state2 === 'white' ? '#009900': 'white'))
-        setStateButton2((stateButton2 => setStateButton2(stateButton2 === 'black' ? 'white' : 'black')))
+    const handleClick2 = () =>  {
+        if(!symptom.SoreThroat){
+            setState2((state2) => setState2(state2 === 'white' ? '#009900': 'white'))
+            setStateButton2((stateButton2 => setStateButton2(stateButton2 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,SoreThroat:'have'})
+        }
+        else{
+            setState2((state2) => setState2(state2 === 'white' ? '#009900': 'white'))
+            setStateButton2((stateButton2 => setStateButton2(stateButton2 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,SoreThroat:undefined})
+        }
     }
     const handleClick3 = () => {
-        setState3((state3) => setState3(state3 === 'white' ? '#009900': 'white'))
-        setStateButton3((stateButton3 => setStateButton3(stateButton3 === 'black' ? 'white' : 'black')))
+        if(!symptom.RunnyNose){
+            setState3((state3) => setState3(state3 === 'white' ? '#009900': 'white'))
+            setStateButton3((stateButton3 => setStateButton3(stateButton3 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,RunnyNose:'have'})
+        }
+        else{
+            setState3((state3) => setState3(state3 === 'white' ? '#009900': 'white'))
+            setStateButton3((stateButton3 => setStateButton3(stateButton3 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,RunnyNose:undefined})
+        }
+        console.log(symptom.RunnyNose)
     }
     const handleClick4 = () => {
-        setState4((state4) => setState4(state4 === 'white' ? '#009900': 'white'))
-        setStateButton4((stateButton4 => setStateButton4(stateButton4 === 'black' ? 'white' : 'black')))
+        if(!symptom.Cough){
+            setState4((state4) => setState4(state4 === 'white' ? '#009900': 'white'))
+            setStateButton4((stateButton4 => setStateButton4(stateButton4 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Cough:'have'})
+        }
+        else{
+            setState4((state4) => setState4(state4 === 'white' ? '#009900': 'white'))
+            setStateButton4((stateButton4 => setStateButton4(stateButton4 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Cough:undefined})
+        }
+        console.log(symptom.Cough)
     }
     const handleClick5 = () => {
-        setState5((state5) => setState5(state5 === 'white' ? '#009900': 'white'))
-        setStateButton((stateButton5 => setStateButton5(stateButton5 === 'black' ? 'white' : 'black')))
+        if(!symptom.Racers){
+            setState5((state5) => setState5(state5 === 'white' ? '#009900': 'white'))
+            setStateButton5((stateButton5 => setStateButton5(stateButton5 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Racers:'have'})
+        }
+        else{
+            setState5((state5) => setState5(state5 === 'white' ? '#009900': 'white'))
+            setStateButton5((stateButton5 => setStateButton5(stateButton5 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Racers:undefined})
+        }
+        console.log(symptom.Racers)
     }
     const handleClick6 = () => {
-        setState6((state6) => setState6(state6 === 'white' ? '#009900': 'white'))
-        setStateButton6((stateButton6 => setStateButton6(stateButton6 === 'black' ? 'white' : 'black')))
+        if(!symptom.Diarrhea){
+            setState6((state6) => setState6(state6 === 'white' ? '#009900': 'white'))
+            setStateButton6((stateButton6 => setStateButton6(stateButton6 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Diarrhea:'have'})
+        }
+        else{
+            setState6((state6) => setState6(state6 === 'white' ? '#009900': 'white'))
+            setStateButton6((stateButton6 => setStateButton6(stateButton6 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Diarrhea:undefined})
+        }
+        console.log(symptom.Diarrhea)
     }
     const handleClick7 = () => {
-        setState7((state7) => setState7(state7 === 'white' ? '#009900': 'white'))
-        setStateButton7((stateButton7 => setStateButton7(stateButton7 === 'black' ? 'white' : 'black')))
+        if(!symptom.Stomach){
+            setState7((state7) => setState7(state7 === 'white' ? '#009900': 'white'))
+            setStateButton7((stateButton7 => setStateButton7(stateButton7 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Stomach:'have'})
+        }
+        else{
+            setState7((state7) => setState7(state7 === 'white' ? '#009900': 'white'))
+            setStateButton7((stateButton7 => setStateButton7(stateButton7 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Stomach:undefined})
+        }
+        console.log(symptom.Stomach)
     }
     const handleClick8 = () => {
-        setState8((state8) => setState8(state8 === 'white' ? '#009900': 'white'))
-        setStateButton8((stateButton8 => setStateButton8(stateButton8=== 'black' ? 'white' : 'black')))
+        if(!symptom.Headache){
+            setState8((state8) => setState8(state8 === 'white' ? '#009900': 'white'))
+            setStateButton8((stateButton8 => setStateButton8(stateButton8 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Headache:'have'})
+        }
+        else{
+            setState8((state8) => setState8(state8 === 'white' ? '#009900': 'white'))
+            setStateButton8((stateButton8 => setStateButton8(stateButton8 === 'black' ? 'white' : 'black')))
+            setSymptom({...symptom,Headache:undefined})
+        }
+        console.log(symptom.Headache)
     }
     return (
         <Container>
@@ -156,7 +215,7 @@ function Symptom (){
          
          <Box state={state8} stateButton={stateButton8} onClick={handleClick8} >
          <Image src={img8} />
-         <h2>ท้องเสีย</h2>
+         <h2>ปวดหัว</h2>
          </Box>
          </BoxM>
          
