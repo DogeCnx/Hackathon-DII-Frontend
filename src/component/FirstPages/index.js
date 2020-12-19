@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Image from './Image'
 import img from '../../assets/medicine.png'
 import img2 from '../../assets/hospital.png'
+import ActionContext from '../../contexts/ActionContext'
 
 
 const Container =styled.div`
@@ -41,19 +42,26 @@ const Box=styled.div`
      border-radius:5%;
  }
 `
+
 function FirtsPage (){
+    const handleClick = (value) => {
+        setCondi(condi+value)
+    }
+    const { condiPage} = React.useContext(ActionContext)
+    const [condi, setCondi] = condiPage
+
     return (
         <Container>
          <WrapperBox>
-         <Box>
-         <Image src={img} />
-         <h2>ยาสามัญประจำบ้าน</h2>
-         </Box>
-         <h3>หรือ</h3>
-         <Box>
-         <Image src={img2} />
-         <h2>รับยาตามหมอนัด</h2>
-         </Box>
+            <Box onClick={() => handleClick(1)}>
+                <Image src={img} />
+                <h2>ยาสามัญประจำบ้าน</h2>
+            </Box>
+             <h3>หรือ</h3>
+            <Box onClick={() => handleClick(2)}>
+                <Image src={img2} />
+                <h2>รับยาตามหมอนัด</h2>
+            </Box>
          </WrapperBox>
         </Container>
     )
