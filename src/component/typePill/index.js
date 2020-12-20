@@ -15,6 +15,7 @@ const Container = styled.div`
   font-family: "Prompt", sans-serif;
   h1 {
     font-size: 2rem;
+    font-weight:600;
   }
 `;
 const WrapperBox = styled.div`
@@ -29,7 +30,7 @@ const WrapperBox = styled.div`
   }
 `;
 const Box = styled.div`
-  width: 400px;
+  width: 350px;
   height: 300px;
   display: flex;
   justify-content: center;

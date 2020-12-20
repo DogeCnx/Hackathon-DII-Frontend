@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const BackgroundImage = styled.div`
   height: ${(props) => props.height}vh;
-  width: 12vw;
+  width: 11vw;
   background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +19,7 @@ const BackgroundOverylay = styled.div`
   justify-content: center;
   align-items: center;
 `;
-function BackgroundBlock({ src, height = 22, children }) {
+function BackgroundBlock({ src, height = 21, children }) {
   return (
     <BackgroundImage src={src} height={height}>
       <BackgroundOverylay>{children}</BackgroundOverylay>
