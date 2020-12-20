@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "./Image";
 import img from "../../assets/medicalmask.png";
+import ActionContext from "../../contexts/ActionContext";
 const Container = styled.div`
   width: 40vw;
   height: 80vh;
@@ -85,16 +86,19 @@ const PayButton = styled.div`
 
 
 function Scan() {
+  const { Mask, handleFunc } = React.useContext(ActionContext)
+  const [numberM, setNumberM,price , setPricce,pageMask , setPageMask,handleMinus,handlePlus ] = Mask
+  const [handleNext,handleBack1,handleBack2,handleReset,handleBack3 ] = handleFunc
   return (
     <Container>
       <Box>
         <Image src={img} />
       </Box>
       <Text>
-      <p>จำนวน: <Button>-</Button>1<Button>+</Button></p>
+      <p>จำนวน: <Button onClick={handleMinus}>-</Button>{numberM}<Button onClick={handlePlus}>+</Button></p>
       </Text>
-      <p>ราคา: 5 บาท</p>
-      <PayButton>ชำระเงิน</PayButton>
+      <p>ราคา: {price} บาท</p>
+      <PayButton onClick={handleNext}>ชำระเงิน</PayButton>
     </Container>
   );
 }
