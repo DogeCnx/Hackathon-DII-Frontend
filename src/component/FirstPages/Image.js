@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const BackgroundImage = styled.div`
   height: ${props => props.height}vh;
-  width: 15vw;
+  width: 13vw;
   background-image: url(${props => props.src});
   background-repeat: no-repeat;
   background-size: cover;

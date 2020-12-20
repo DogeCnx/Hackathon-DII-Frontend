@@ -45,9 +45,6 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: #EEEE;
-  /* border-top:10px;
-  border-left:10px;
-  border: solid 2px gray; */
   border-radius: 5%;
   box-shadow: 15px 15px 5px -5px gray;
 `;

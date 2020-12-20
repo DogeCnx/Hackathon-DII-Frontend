@@ -10,14 +10,15 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   font-family: 'Prompt', sans-serif;
 `;
 const Wrapper = styled.div`
   width: 40vw;
   height: 80vh;
-  background-color:  #009900;
+  background-color: #EEEE;
   border-radius: 5%;
+  box-shadow: 15px 15px 5px -5px gray;
 
   h1 {
     text-align: center;
@@ -42,7 +43,7 @@ const Box = styled.div`
   p {
     margin-top: -0.2rem;
     font-size: 1.5rem;
-    color: white;
+    color: black;
     margin-left: 1rem;
   }
 `;
