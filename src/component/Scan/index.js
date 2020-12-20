@@ -6,11 +6,11 @@ import BarcodeReader from 'react-barcode-reader'
 import ActionContext from '../../contexts/ActionContext'
 const Container =styled.div`
  width:100vw;
- height:100vh;
- background-color:#009900;
+ height:50vh;
  display:flex;
  justify-content:center;
  align-items:center;
+ font-family: 'Prompt', sans-serif;
 `
 const Box =styled.div`
  display:flex;
@@ -21,7 +21,8 @@ const Box =styled.div`
  p{
      margin-top:1rem;
      font-size:2rem;
-     color:white;
+     font-weight:500;
+     color:black;
  }
 
 `

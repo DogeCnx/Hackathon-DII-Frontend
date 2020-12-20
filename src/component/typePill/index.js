@@ -7,7 +7,7 @@ import ActionContext from "../../contexts/ActionContext";
 
 const Container = styled.div`
   width: 100vw;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;

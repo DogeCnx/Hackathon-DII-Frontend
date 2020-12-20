@@ -7,7 +7,7 @@ import img3 from "../../assets/pay.png";
 import img4 from "../../assets/receive.png";
 
 const ContainerToUse = styled.div`
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@ const ContainerToUse = styled.div`
 const TextContainer = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  font-weight:500;
 `;
 const Content = styled.div`
   height: auto;

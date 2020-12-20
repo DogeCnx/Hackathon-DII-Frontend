@@ -5,7 +5,7 @@ import img from "../../assets/diarrhea1.png";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;

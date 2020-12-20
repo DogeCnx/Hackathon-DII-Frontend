@@ -5,7 +5,7 @@ import img from "../../assets/check.png";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background-color:white;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   width: 40vw;
-  height: 80vh;
+  height: 75vh;
   background-color: #EEEE;
   border-radius: 5%;
   box-shadow: 15px 15px 5px -5px gray;

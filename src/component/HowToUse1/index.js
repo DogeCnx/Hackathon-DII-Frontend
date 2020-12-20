@@ -7,7 +7,7 @@ import img3 from "../../assets/receive.png";
 import img4 from "../../assets/workflow.png";
 
 const ContainerToUse = styled.div`
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
