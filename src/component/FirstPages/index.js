@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Image from './Image'
 import img from '../../assets/medicine.png'
 import img2 from '../../assets/hospital.png'
+import img3 from '../../assets/mask.png'
 import ActionContext from '../../contexts/ActionContext'
 import HowToUse2 from '../HowToUse2/index'
 import Symptom from '../Symptom/index'
@@ -26,7 +27,7 @@ const Container =styled.div`
  flex-direction:column;
 `
 const WrapperBox =styled.div`
- width:60vw;
+ width:70vw;
  height:20vh;
  display:flex;
  justify-content:space-between;
@@ -151,10 +152,13 @@ function FirtsPage (){
                     <Image src={img} />
                     <h2>ยาสามัญประจำบ้าน</h2>
                 </Box>
-                    <h3>หรือ</h3>
                 <Box onClick={handleClick2}>
                     <Image src={img2} />
                     <h2>รับยาตามหมอนัด</h2>
+                </Box>
+                <Box onClick={handleClick2}>
+                    <Image src={img3} />
+                    <h2>ซื้อแมส</h2>
                 </Box>
             </WrapperBox>
             :null}
