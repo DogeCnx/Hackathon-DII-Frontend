@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "./Image";
 import img from "../../assets/drug.png";
 import img2 from "../../assets/mixture.png";
-import ActionContext from '../../contexts/ActionContext'
+import ActionContext from "../../contexts/ActionContext";
 
 const Container = styled.div`
   width: 100vw;
@@ -49,29 +49,29 @@ const Box = styled.div`
   }
 `;
 function TypePill() {
-  const { handleFunc,pills } = React.useContext(ActionContext)
-  const [handleNext,handleBack1] = handleFunc
-  const [pillData, setPill] = pills
+  const { handleFunc, pills } = React.useContext(ActionContext);
+  const [handleNext, handleBack1] = handleFunc;
+  const [pillData, setPill] = pills;
   const handleClick1 = () => {
-    handleNext()
-    setPill(1)
-  }
+    handleNext();
+    setPill(1);
+  };
   const handleClick2 = () => {
-    handleNext()
-    setPill(-1)
-  }
+    handleNext();
+    setPill(-1);
+  };
   return (
     <Container>
       <h1>ต้องการรับยาชนิดไหน ? </h1>
       <WrapperBox>
         <Box onClick={handleClick1}>
           <Image src={img} />
-          <h2>ยาน้ำ</h2>
+          <h2>ยาเม็ด</h2>
         </Box>
         <h3>หรือ</h3>
-        <Box  onClick={handleClick2}>
+        <Box onClick={handleClick2}>
           <Image src={img2} />
-          <h2>ยาเม็ด</h2>
+          <h2>ยาน้ำ</h2>
         </Box>
       </WrapperBox>
     </Container>
