@@ -13,7 +13,8 @@ import IndexSuggest from '../Suggest/index'
 import Stomachache from '../Suggest/stomachache'
 import List from '../List/index'
 import Scan from '../Scan/index'
-import QRCode from "react-qr-code";
+import QRCodeCom from '../QRCode/index';
+import Covid from '../Suggest/covid'
 
 
 const Container =styled.div`
@@ -61,14 +62,17 @@ function ActionPage(state,symptom,pillData){
         case 2:
           return <Symptom/>;
         case 3:
-            if(symptom.Diarrhea){
+            if(symptom.Diarrhea && !symptom.Stomach){
                 return <Diarrhea/>
             }
-            else if(symptom.Stomach){
+            else if(symptom.Stomach&& !symptom.Diarrhea){
                 return <Stomachache/>
             }
-            else if(symptom.Cough){
+            else if(symptom.Cough && !symptom.Stomach){
                 return <Drung/>
+            }
+            else if(symptom.fever && symptom.SoreThroat && symptom.Cough && symptom.Stomach && symptom.Headache && symptom.RunnyNose && symptom.Diarrhea && symptom.Racers){
+                return <Covid />
             }
             else {
                 return <IndexSuggest/>
@@ -78,9 +82,7 @@ function ActionPage(state,symptom,pillData){
         case 5:
             return <List />;
         case 6:
-            return <QRCode value={Math.random()} />;
-        case 7:
-            return 4;
+            return <QRCodeCom/>;
         default:
           return 'Unknown';
       }
@@ -94,7 +96,7 @@ function ActionAspirint(state){
         case 2:
           return <List />;
         case 3:
-            return <QRCode value={Math.random()} />;
+            return <QRCodeCom />;
         default:
           return 'Unknown';
       }
