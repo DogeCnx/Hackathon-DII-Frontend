@@ -22,10 +22,11 @@ const Container =styled.div`
  display:flex;
  align-items:center;
  justify-content:center;
+ flex-direction:column;
 `
 const WrapperBox =styled.div`
  width:60vw;
- height:100vh;
+ height:20vh;
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -51,6 +52,31 @@ const Box=styled.div`
      color:white;
      border-radius:5%;
  }
+`
+const Wrapper =styled.div`
+ width:auto;
+ height:auto;
+ display:flex;
+ flex-direction:row;
+`
+const Button =styled.div`
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: #009900;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:1rem;
+  margin-left:1rem;
+  font-family: 'Prompt', sans-serif;
+  :hover {
+    background-color: #00a472;
+  }
 `
 function ActionPage(state,symptom,pillData){
     switch (state) {
@@ -130,11 +156,13 @@ function FirtsPage (){
                 </Box>
             </WrapperBox>
             :null}
-            {condi >= 0  ? ActionPage(step,symptom,pillData) : ActionAspirint(step)}
-            {step >= 0 && step <= 6 && condi == 1 ? <button onClick={handleNext}>Next</button> : null }
-            {step >= 1 && step <= 7 && condi == 1 ? <button onClick={handleBack1}>handleBack</button> : null }  
-            {condi == -1 ? <button onClick={handleReset}>Reset</button>: null}      
-            {condi == -1 && step == 2? <button onClick={handleNext}>Next</button>: null}  
+             {condi >= 0  ? ActionPage(step,symptom,pillData) : ActionAspirint(step)}
+            <Wrapper>
+            {step >= 1 && step <= 7 && condi == 1 && step !== 4? <Button onClick={handleBack1}>กลับ</Button> : null }  
+            {step >= 0 && step <= 6 && condi == 1 && step !== 4? <Button onClick={handleNext}>ต่อไป</Button> : null }
+            {condi == -1 ? <Button onClick={handleReset}>กลับ</Button>: null}      
+            {condi == -1 && step == 2? <Button onClick={handleNext}>ต่อไป</Button>: null}
+            </Wrapper>
         </Container>
     )
 }
