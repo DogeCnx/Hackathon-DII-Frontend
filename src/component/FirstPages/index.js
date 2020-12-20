@@ -76,7 +76,7 @@ const Button =styled.div`
   margin-left:1rem;
   font-family: 'Prompt', sans-serif;
   :hover {
-    background-color: #00a472;
+    background-color: #00CC00;
   }
 `
 function ActionPage(state,symptom,pillData){
@@ -88,17 +88,17 @@ function ActionPage(state,symptom,pillData){
         case 2:
           return <Symptom/>;
         case 3:
-            if(symptom.Diarrhea && !symptom.Stomach){
+            if(symptom.Diarrhea && !symptom.Stomach ){
                 return <Diarrhea/>
             }
             else if(symptom.Stomach&& !symptom.Diarrhea){
                 return <Stomachache/>
             }
-            else if(symptom.Cough && !symptom.Stomach){
-                return <Drung/>
-            }
-            else if(symptom.fever && symptom.SoreThroat && symptom.Cough && symptom.Stomach && symptom.Headache && symptom.RunnyNose && symptom.Diarrhea && symptom.Racers){
+            else if(symptom.fever && symptom.SoreThroat && symptom.Cough && symptom.Headache && symptom.RunnyNose && symptom.Racers){
                 return <Covid />
+            }
+            else if(symptom.Cough && !symptom.Stomach ){
+                return <Drung/>
             }
             else {
                 return <IndexSuggest/>

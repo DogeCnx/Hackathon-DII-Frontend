@@ -4,7 +4,7 @@ import QRCode from "react-qr-code";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-left: 5rem;
+  margin-left: 2rem;
   color: black;
   font-size: 2rem;
   font-weight: 600;
@@ -56,13 +56,14 @@ function QRCodeCom() {
             <Wrapper>
                 <Box>
                     <QRCode value={Math.floor((Math.random() * 1000) + 10)} />
-                </Box>           
+                </Box>      
+                <Text>
+                  กรุณาสแกนเพื่อจ่ายเงิน
+                </Text>       
                 <Text>
                   <p><div>ยอดสุทธิรวม&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div>580 บาทถ้วน</div></p>
                 </Text>  
-                <Text>
-                  กรุณาสแกนเพื่อจ่ายเงิน
-                </Text>     
+                   
             </Wrapper>
         </Container>
     )
