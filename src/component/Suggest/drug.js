@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #009900;
+  /* background-color: #009900; */
 `;
 const Text = styled.div`
   width: 45vw;
@@ -44,8 +44,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  background-color: #EEEE;
   border-radius: 5%;
+  box-shadow: 15px 15px 5px -5px gray;
 `;
 
 function Drug() {
